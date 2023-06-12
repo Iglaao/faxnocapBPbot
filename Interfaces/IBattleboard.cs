@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace faxnocapBPbot.Interfaces
 {
     public interface IBattleboard
     {
-        Task PostBattleboard();
-        Task UpdateBattleboard();
-        Task RemoveBattleboard();
+        Task<(bool, string)> PostBattleboard(string content, string season, string title, params int[] battleId);
+        Task UpdateBattleboard(string season, params int[] id);
+        Task RemoveBattleboard(string season, string id);
     }
 }
