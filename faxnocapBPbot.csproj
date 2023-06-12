@@ -244,8 +244,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="config.json" />
-    <Content Include="FirestoreKey\faxnocap-bbbf4-firebase-adminsdk-hwtbt-0b21f863ea.json">
+    <None Include="PrivateKeys\config.json" />
+    <Content Include="PrivateKeys\faxnocap-bbbf4-firebase-adminsdk-hwtbt-0b21f863ea.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
