@@ -5,6 +5,7 @@ using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using faxnocapBPbot.Commands;
+using faxnocapBPbot.ConfigStructs;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -22,11 +23,8 @@ namespace faxnocapBPbot
         
         public async Task RunAsync()
         {
-            var json = string.Empty;
-            using (var fs = File.OpenRead("config.json"))
-            using (var sr = new StreamReader(fs, new UTF8Encoding(false))) json = await sr.ReadToEndAsync();
-            var configJson = JsonConvert.DeserializeObject<Config>(json);
-            
+            var configJson = ConfigDeserializator.ReturnDeserializedJson<Config>("config.json");
+
             var config = new DiscordConfiguration()
             {
                 Intents = DiscordIntents.All,

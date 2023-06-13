@@ -50,6 +50,9 @@
     <Reference Include="DSharpPlus.SlashCommands, Version=4.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DSharpPlus.SlashCommands.4.4.1\lib\netstandard2.0\DSharpPlus.SlashCommands.dll</HintPath>
     </Reference>
+    <Reference Include="FirebaseAdmin, Version=2.3.0.0, Culture=neutral, PublicKeyToken=97c8d00c348326ed, processorArchitecture=MSIL">
+      <HintPath>packages\FirebaseAdmin.2.3.0\lib\net461\FirebaseAdmin.dll</HintPath>
+    </Reference>
     <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
     </Reference>
@@ -62,20 +65,26 @@
     <Reference Include="Google.Api.Gax.Grpc, Version=4.3.1.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
       <HintPath>packages\Google.Api.Gax.Grpc.4.3.1\lib\net462\Google.Api.Gax.Grpc.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis, Version=1.58.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.1.58.0\lib\net45\Google.Apis.dll</HintPath>
+    <Reference Include="Google.Api.Gax.Rest, Version=4.3.1.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Api.Gax.Rest.4.3.1\lib\net462\Google.Api.Gax.Rest.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.58.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.Auth.1.58.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    <Reference Include="Google.Apis, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.60.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.58.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.Auth.1.58.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.Auth, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.60.0\lib\net461\Google.Apis.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.58.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.Core.1.58.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.60.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.58.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Apis.1.58.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.Core, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.60.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.60.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Translate.v2, Version=1.60.0.875, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Translate.v2.1.60.0.875\lib\net45\Google.Apis.Translate.v2.dll</HintPath>
     </Reference>
     <Reference Include="Google.Cloud.Firestore, Version=3.3.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
       <HintPath>packages\Google.Cloud.Firestore.3.3.0\lib\net462\Google.Cloud.Firestore.dll</HintPath>
@@ -107,8 +116,8 @@
     <Reference Include="Grpc.Net.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
       <HintPath>packages\Grpc.Net.Common.2.51.0\lib\netstandard2.0\Grpc.Net.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.DependencyInjection.5.0.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
@@ -118,6 +127,12 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.31.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.31.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.31.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.31.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
@@ -214,6 +229,12 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Threading.Channels, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Channels.5.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
     </Reference>
@@ -231,11 +252,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlbionApiFetcher.cs" />
+    <Compile Include="BattleboardAggregator.cs" />
     <Compile Include="Bot.cs" />
     <Compile Include="Commands\BattleboardCommands.cs" />
     <Compile Include="Commands\GuildCommands.cs" />
-    <Compile Include="Config.cs" />
+    <Compile Include="ConfigStructs\Config.cs" />
+    <Compile Include="ConfigStructs\ConfigDeserializator.cs" />
+    <Compile Include="ConfigStructs\FirestoreConfig.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Firestore.cs" />
     <Compile Include="Handlers\Battleboard.cs" />
     <Compile Include="Interfaces\IBattleboard.cs" />
     <Compile Include="Program.cs" />
@@ -245,9 +270,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="PrivateKeys\config.json" />
-    <Content Include="PrivateKeys\faxnocap-bbbf4-firebase-adminsdk-hwtbt-0b21f863ea.json">
+    <EmbeddedResource Include="PrivateKeys\firestoreConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

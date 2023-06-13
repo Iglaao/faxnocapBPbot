@@ -21,6 +21,7 @@ namespace faxnocapBPbot.Handlers
                 if (battleboards.Count == 1)
                 {
                     //post bb to firestore
+                    await Firestore.UploadFileToFirestore(season, battleboards[0]);
                 }
                 else
                 {

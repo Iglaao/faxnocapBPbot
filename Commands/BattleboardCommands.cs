@@ -1,4 +1,6 @@
 ﻿using DSharpPlus.SlashCommands;
+using faxnocapBPbot.Handlers;
+using System;
 using System.Threading.Tasks;
 
 namespace faxnocapBPbot.Commands
@@ -12,14 +14,16 @@ namespace faxnocapBPbot.Commands
             [Option("name", "Enter name of battleboard.")] string title,
             [Option("id", "Enter id of battleboard.")] string input)
         {
+            Battleboard bb = new Battleboard();
+
             await ctx.Channel.SendMessageAsync(Status.Working + "Posting battleboard.").ConfigureAwait(false);
-            //var t1 = Array.ConvertAll(test.Split(','), int.Parse);
-            // PostBattleboard(string content, string season, string title, params int[] battleId)
-            if (true) await ctx.Channel.SendMessageAsync(Status.Success + "Battleboard successfully posted.").ConfigureAwait(false);
+            var arrId = Array.ConvertAll(input.Split(','), int.Parse);
+            var task = await bb.PostBattleboard(content, season, title, arrId);
+            if (task.Item1) await ctx.Channel.SendMessageAsync(Status.Success + "Battleboard successfully posted.").ConfigureAwait(false);
             else
             {
                 await ctx.Channel.SendMessageAsync(Status.Failed + "Error during posting battleboard.").ConfigureAwait(false);
-                await ctx.Channel.SendMessageAsync(Status.Failed).ConfigureAwait(false); // ex.message
+                await ctx.Channel.SendMessageAsync(Status.Failed + task.Item2).ConfigureAwait(false); // ex.message
             }
         }
 
