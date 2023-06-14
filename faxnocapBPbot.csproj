@@ -263,6 +263,9 @@
     <Compile Include="Firestore.cs" />
     <Compile Include="Handlers\Battleboard.cs" />
     <Compile Include="Interfaces\IBattleboard.cs" />
+    <Compile Include="JsonModels\JSONbattleboard.cs" />
+    <Compile Include="JsonModels\JSONguild.cs" />
+    <Compile Include="JsonModels\JSONplayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Status.cs" />

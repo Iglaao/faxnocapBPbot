@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System;
 using faxnocapBPbot.ConfigStructs;
+using faxnocapBPbot.JsonModels;
 
 namespace faxnocapBPbot
 {
@@ -21,12 +22,15 @@ namespace faxnocapBPbot
                 FirestoreDb db = FirestoreDb.Create(firestoreConfig.Project_id);
                 DateTime dateTime = DateTime.Now.Date;
                 DocumentReference docRef = db.Collection(collectionName).Document(dateTime.ToString());
-                await docRef.SetAsync(JsonDocument.Parse(string.Format("[{0}]", json)));
+                
+                JSONbattleboard bb = Newtonsoft.Json.JsonConvert.DeserializeObject<JSONbattleboard>(json);
+                await docRef.SetAsync(bb);
             }
             catch(Exception ex)
             {
                 var test = ex;
             }
+
             
         }
     }
