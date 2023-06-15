@@ -1,11 +1,4 @@
-﻿using FirebaseAdmin;
-using FirebaseAdmin.Auth;
-using Google.Apis.Auth.OAuth2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace faxnocapBPbot
 {
@@ -13,6 +6,7 @@ namespace faxnocapBPbot
     {
         static void Main(string[] args)
         {
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "firestoreConfig.json");
             var bot = new Bot();
             bot.RunAsync().GetAwaiter().GetResult();
         }

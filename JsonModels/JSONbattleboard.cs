@@ -13,6 +13,8 @@ namespace faxnocapBPbot.JsonModels
         [FirestoreProperty]
         public ulong id { get; set; }
         [FirestoreProperty]
+        public string title { get; set; }
+        [FirestoreProperty]
         public DateTime startTime { get; set; }
         [FirestoreProperty]
         public Dictionary<string, JSONbattleboardPlayer> players { get; set; }

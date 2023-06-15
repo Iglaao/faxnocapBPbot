@@ -8,7 +8,7 @@ namespace faxnocapBPbot.Handlers
 {
     public class Battleboard : IBattleboard
     {
-        public async Task<(bool, string)> PostBattleboard(string content, string season, string title, params int[] battleId)
+        public async Task<(bool, string)> PostBattleboard(string season, string content, string title, params int[] battleId)
         {
             List<string> battleboards = new List<string>();
             try
@@ -20,8 +20,7 @@ namespace faxnocapBPbot.Handlers
                 }
                 if (battleboards.Count == 1)
                 {
-                    //post bb to firestore
-                    await Firestore.UploadFileToFirestore(season, battleboards[0]);
+                    await Firestore.UploadFileToFirestore(season, title, battleboards[0]);
                 }
                 else
                 {
