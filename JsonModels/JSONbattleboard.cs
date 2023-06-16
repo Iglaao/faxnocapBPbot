@@ -10,12 +10,21 @@ namespace faxnocapBPbot.JsonModels
     [FirestoreData]
     public class JSONbattleboard
     {
+        public JSONbattleboard()
+        {
+            players = new Dictionary<string, JSONbattleboardPlayer>();
+            guilds = new Dictionary<string, JSONbattleboardGuild>();
+            alliances = new Dictionary<string, JSONbattleboardAlliances>();
+        }
+
         [FirestoreProperty]
-        public ulong id { get; set; }
+        public string id { get; set; }
         [FirestoreProperty]
         public string title { get; set; }
         [FirestoreProperty]
         public DateTime startTime { get; set; }
+        [FirestoreProperty]
+        public int totalKills { get; set; }
         [FirestoreProperty]
         public Dictionary<string, JSONbattleboardPlayer> players { get; set; }
         [FirestoreProperty]
