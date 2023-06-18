@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace faxnocapBPbot.JsonModels
 {
-    public class JSONplayer
+    public class PlayerModel
     {
         public string Name { get; set; }
         public string GuildName { get; set; }

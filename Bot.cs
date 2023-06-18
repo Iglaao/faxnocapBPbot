@@ -23,7 +23,7 @@ namespace faxnocapBPbot
         
         public async Task RunAsync()
         {
-            var configJson = ConfigDeserializator.ReturnDeserializedJson<Config>("config.json");
+            var configJson = ConfigDeserializator.ReturnDeserializedJson<DiscordConfig>("config.json");
 
             var config = new DiscordConfiguration()
             {

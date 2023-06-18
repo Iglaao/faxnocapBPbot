@@ -2,7 +2,7 @@
 
 namespace faxnocapBPbot
 {
-    public struct Config
+    public struct DiscordConfig
     {
         [JsonProperty("token")]
         public string Token { get; private set; }

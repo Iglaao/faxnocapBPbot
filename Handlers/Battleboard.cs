@@ -1,5 +1,7 @@
 ﻿using faxnocapBPbot.Exceptions;
+using faxnocapBPbot.Helpers;
 using faxnocapBPbot.Interfaces;
+using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,22 +15,16 @@ namespace faxnocapBPbot.Handlers
             List<string> battleboards = new List<string>();
             try
             {
-                foreach (int id in battleId)
-                {
-                    var bb = await AlbionApiFetcher.FetchAPI(AlbionApiFetcher.BattleUrl + id);
-                    battleboards.Add(bb);
-                }
-                if (battleboards.Count == 1)
-                {
-                    await Firestore.UploadFileToFirestore(season, title, battleboards[0]);
-                }
-                else
-                {
-                    await Firestore.UploadCombinedToFirestore(season, title, battleboards);
-                    //aggregate all bb into one
-                    //post aggregated bb to firestore
+                foreach (int id in battleId) battleboards.Add(await AlbionApiFetcher.FetchAPI(AlbionApiFetcher.BattleUrl + id));
+                
+                var battleboard = BattleboardAggregator.CombineBattleboards(title, battleboards);
 
-                }
+                DocumentReference docRef = Firestore.GetInstance().Collection(season).Document(battleboard.StartTime.ToString("dd.MM.yyyy"));
+                Dictionary<string, object> bbWrapper = new Dictionary<string, object>
+                {
+                    { battleboard.Id, battleboard },
+                };
+                await docRef.SetAsync(bbWrapper, SetOptions.MergeAll);
                 return (true, "");
             }
             catch (ApiException ex)
