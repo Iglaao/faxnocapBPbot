@@ -7,6 +7,7 @@ namespace faxnocapBPbot.Helpers
 {
     public static class AlbionApiFetcher
     {
+        public static string GuildId = "6g1WhBpsQ_W2eldCMtuTrw";
         public static string GuildUrl = "https://gameinfo.albiononline.com/api/gameinfo/guilds/";
         public static string BattleUrl = "https://gameinfo.albiononline.com/api/gameinfo/battles/";
 

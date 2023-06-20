@@ -10,7 +10,7 @@ namespace faxnocapBPbot.Commands
 {
     public class BattleboardCommands : ApplicationCommandModule
     {
-        private Battleboard _battleboard = new Battleboard();
+        private readonly Battleboard _battleboard = new Battleboard();
 
         [SlashCommand("PostBattleBoard", "Post battleboard.")]
         public async Task PostBattleBoard(InteractionContext ctx,
@@ -30,15 +30,19 @@ namespace faxnocapBPbot.Commands
         }
 
         [SlashCommand("RemoveBattleBoard", "Remove battleboard.")]
-        public async Task RemoveBattleBoard(InteractionContext ctx, [Option("id", "Type id of battleboard.")] string input)
+        public async Task RemoveBattleBoard(InteractionContext ctx,
+            [Option("season", "Enter id of season.")] string season,
+            [Option("date", "Enter date of battle.")] string date,
+            [Option("id", "Type id of battleboard.")] string input)
         {
-            await ctx.Channel.SendMessageAsync(Status.Working).ConfigureAwait(false);
-        }
-
-        [SlashCommand("UpdateBattleBoard", "Update battleboard.")]
-        public async Task UpdateBattleBoard(InteractionContext ctx, [Option("id", "Type id of battleboard.")] string input)
-        {
-            await ctx.Channel.SendMessageAsync(Status.Failed).ConfigureAwait(false);
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(Status.Working + "Removing battleboard."));
+            var task = await _battleboard.RemoveBattleboard(season, date, input);
+            if (task.Item1) await ctx.Channel.SendMessageAsync(Status.Success + "Battleboard successfully removed.").ConfigureAwait(false);
+            else
+            {
+                await ctx.Channel.SendMessageAsync(Status.Failed + "Error during posting battleboard.").ConfigureAwait(false);
+                await ctx.Channel.SendMessageAsync(Status.Failed + task.Item2).ConfigureAwait(false);
+            }
         }
     }
 }

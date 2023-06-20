@@ -315,6 +315,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\Guild.cs" />
     <Compile Include="Helpers\AlbionApiFetcher.cs" />
     <Compile Include="Bot.cs" />
     <Compile Include="Commands\BattleboardCommands.cs" />
@@ -327,6 +328,7 @@
     <Compile Include="Handlers\Battleboard.cs" />
     <Compile Include="Helpers\BattleboardAggregator.cs" />
     <Compile Include="Interfaces\IBattleboard.cs" />
+    <Compile Include="Interfaces\IGuild.cs" />
     <Compile Include="JsonModels\BattleboardModel.cs" />
     <Compile Include="JsonModels\GuildModel.cs" />
     <Compile Include="JsonModels\PlayerModel.cs" />

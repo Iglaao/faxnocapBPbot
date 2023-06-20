@@ -41,7 +41,7 @@ namespace faxnocapBPbot
             });
 
             var slashCommandsConfig = Client.UseSlashCommands();
-            //slashCommandsConfig.RegisterCommands<GuildCommands>();
+            slashCommandsConfig.RegisterCommands<GuildCommands>();
             slashCommandsConfig.RegisterCommands<BattleboardCommands>();
 
             await Client.ConnectAsync();
