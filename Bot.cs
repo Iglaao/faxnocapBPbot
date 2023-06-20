@@ -1,17 +1,11 @@
 ﻿using DSharpPlus;
-using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using faxnocapBPbot.Commands;
 using faxnocapBPbot.ConfigStructs;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace faxnocapBPbot

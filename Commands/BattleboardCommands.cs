@@ -2,7 +2,6 @@
 using DSharpPlus.Entities;
 using DSharpPlus.SlashCommands;
 using faxnocapBPbot.Handlers;
-using faxnocapBPbot.Interfaces;
 using System;
 using System.Threading.Tasks;
 

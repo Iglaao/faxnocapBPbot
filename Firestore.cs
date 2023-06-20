@@ -1,14 +1,5 @@
 ﻿using Google.Cloud.Firestore;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
-using System;
 using faxnocapBPbot.ConfigStructs;
-using faxnocapBPbot.JsonModels;
-using Newtonsoft.Json;
 
 namespace faxnocapBPbot
 {

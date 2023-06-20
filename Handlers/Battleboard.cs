@@ -1,5 +1,4 @@
-﻿using faxnocapBPbot.Exceptions;
-using faxnocapBPbot.Helpers;
+﻿using faxnocapBPbot.Helpers;
 using faxnocapBPbot.Interfaces;
 using faxnocapBPbot.JsonModels;
 using Google.Cloud.Firestore;
