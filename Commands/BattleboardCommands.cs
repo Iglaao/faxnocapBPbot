@@ -1,7 +1,7 @@
 ﻿using DSharpPlus;
 using DSharpPlus.Entities;
 using DSharpPlus.SlashCommands;
-using faxnocapBPbot.Handlers;
+using faxnocapBPbot.Interfaces;
 using System;
 using System.Threading.Tasks;
 
@@ -9,7 +9,11 @@ namespace faxnocapBPbot.Commands
 {
     public class BattleboardCommands : ApplicationCommandModule
     {
-        private readonly Battleboard _battleboard = new Battleboard();
+        private readonly IBattleboard _battleboard;
+        public BattleboardCommands(IBattleboard battleboard)
+        {
+            _battleboard = battleboard;
+        }
 
         [SlashCommand("PostBattleBoard", "Post battleboard.")]
         public async Task PostBattleBoard(InteractionContext ctx,

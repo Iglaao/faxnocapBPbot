@@ -5,6 +5,9 @@ using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using faxnocapBPbot.Commands;
 using faxnocapBPbot.ConfigStructs;
+using faxnocapBPbot.Handlers;
+using faxnocapBPbot.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 
@@ -34,7 +37,13 @@ namespace faxnocapBPbot
                 Timeout = TimeSpan.FromMinutes(2)
             });
 
-            var slashCommandsConfig = Client.UseSlashCommands();
+            var slashCommandsConfig = Client.UseSlashCommands(new SlashCommandsConfiguration
+            {
+                Services = new ServiceCollection()
+                    .AddSingleton<IBattleboard, Battleboard>()
+                    .AddSingleton<IGuild, Guild>()
+                    .BuildServiceProvider()
+            });
             slashCommandsConfig.RegisterCommands<GuildCommands>();
             slashCommandsConfig.RegisterCommands<BattleboardCommands>();
 

@@ -1,14 +1,19 @@
 ﻿using DSharpPlus;
 using DSharpPlus.Entities;
 using DSharpPlus.SlashCommands;
-using faxnocapBPbot.Handlers;
+using faxnocapBPbot.Interfaces;
 using System.Threading.Tasks;
 
 namespace faxnocapBPbot.Commands
 {
     public class GuildCommands : ApplicationCommandModule
     {
-        private readonly Guild _guild = new Guild();
+        private readonly IGuild _guild;
+        public GuildCommands(IGuild guild)
+        {
+            _guild = guild;
+        }
+
         [SlashCommand("FetchMembersStats", "Fetches members statistics.")]
         public async Task FetchMembersStats(InteractionContext ctx, [Option("season", "Enter id of season.")] string season)
         {
