@@ -14,7 +14,7 @@ namespace faxnocapBPbot.Commands
             _guild = guild;
         }
 
-        [SlashCommand("FetchMembersStats", "Fetches members statistics.")]
+        [SlashCommand("FetchMembersStats", "Fetch member's statistics.")]
         public async Task FetchMembersStats(InteractionContext ctx, [Option("season", "Enter id of season.")] string season)
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(Status.Working + "Posting members stats."));
@@ -27,7 +27,7 @@ namespace faxnocapBPbot.Commands
             }
         }
 
-        [SlashCommand("FetchGuildStats", "Fetches guild's statistics.")]
+        [SlashCommand("FetchGuildStats", "Fetch guild's statistics.")]
         public async Task FetchGuildStats(InteractionContext ctx, [Option("season", "Enter id of season.")] string season)
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent(Status.Working + "Posting guild stats."));
