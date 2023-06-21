@@ -31,7 +31,12 @@ namespace faxnocapBPbot.Handlers
                 _docRef = Firestore.GetInstance().Collection(season + "dict").Document("dict");
                 Dictionary<string, object> dict = new Dictionary<string, object>
                 {
-                    {battleboard.Id, (battleboard.Title, battleboard.StartTime) }
+                    {battleboard.Id, new Dictionary<string, object>
+                        {
+                            { "Title", battleboard.Title },
+                            { "StartTime", battleboard.StartTime },
+                        }
+                    }
                 };
                 await _docRef.SetAsync(dict, SetOptions.MergeAll);
                 //update players
