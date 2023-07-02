@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace faxnocapBPbot.Handlers
 {
@@ -28,6 +29,7 @@ namespace faxnocapBPbot.Handlers
                     };
                     await _docRef.SetAsync(playerData, SetOptions.MergeAll);
                 }
+                await UpdateMemberList(stats, season);
                 return (true, "");
             }
             catch (Exception ex)
@@ -54,6 +56,18 @@ namespace faxnocapBPbot.Handlers
             {
                 return (false, ex.Message);
             }
+        }
+
+        private async Task UpdateMemberList(List<PlayerModel> players, string season)
+        {
+            ArrayList membersArray = new ArrayList();
+            players.ForEach(member => membersArray.Add(member.Name));
+            _docRef = Firestore.GetInstance().Collection(season + "dict").Document("members");
+            Dictionary<string, object> data = new Dictionary<string, object>
+            {
+                {"members", membersArray},
+            };
+            await _docRef.SetAsync(data, SetOptions.MergeAll);
         }
     }
 }
