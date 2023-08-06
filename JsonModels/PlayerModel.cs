@@ -51,6 +51,7 @@ namespace faxnocapBPbot.JsonModels
         [FirestoreProperty]
         public ulong Total { get; set; }
     }
+    //TODO Include crafting for next season
     [FirestoreData]
     public class CraftingModel
     {

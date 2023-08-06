@@ -329,6 +329,7 @@
     <Compile Include="Helpers\BattleboardAggregator.cs" />
     <Compile Include="Interfaces\IBattleboard.cs" />
     <Compile Include="Interfaces\IGuild.cs" />
+    <Compile Include="JsonModels\AttendanceModel.cs" />
     <Compile Include="JsonModels\BattleboardModel.cs" />
     <Compile Include="JsonModels\GuildModel.cs" />
     <Compile Include="JsonModels\PlayerModel.cs" />
